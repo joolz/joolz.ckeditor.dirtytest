@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:portal="http://liferay.com/faces/portal"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head />
+
+	<h:body>
+
+		<p>Put this on a page that also contains a CKEditor. Follow the
+			browser log (F12) and punch something into the CKEditor. If all is
+			well, the message "it's dirty, extend session" should appear and the
+			session should be extended. With portal:inputRichText it isn't, with
+			liferay-ui:input-editor in a JSP page, it is.</p>
+
+		<h:outputScript name="/js/checkDirtyTest.js" target="head" />
+
+		<portal:inputRichText id="myId" value="Some content"
+			defaultValue="Default value" />
+
+	</h:body>
+</f:view>
